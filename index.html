@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+  </head>
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+    .container {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      /* border: 1px solid blue; */
+    }
+    .selector {
+      display: flex;
+      flex-direction: column;
+      /* border: 3px solid purple; */
+    }
+    #time-split {
+      height: 3em;
+      width: 12em;
+      padding: 10px;
+      align-self: center;
+      font-size: 15px;
+    }
+    .inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* border: 2px solid green; */
+    }
+    input {
+      height: 2em;
+      width: 5em;
+      margin: 15px 5px;
+      padding-left: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .input-divider {
+      margin: 23px 0px;
+    }
+    button {
+      height: 3em;
+      width: 10em;
+      font-size: 15px;
+    }
+    #calculated-result {
+      padding: 20px 10px;
+      font-size: 25px;
+    }
+  </style>
+  <body>
+    <h1>Time/Split Calculator</h1>
+    <div>
+      <h3>Enter Time (per 825 meters) or Split (per 500 meters)</h3>
+      <form class="" id="input-form">
+        <div class="container">
+          <div class="container">
+            <div class="selector">
+              <select name="time-split" id="time-split" required>
+                <option value="">Select Time or Split</option>
+                <option value="time">Time</option>
+                <option value="split">Split</option>
+              </select>
+            </div>
+            <div class="inputs">
+              <div>
+                <input type="number" id="user-input-minutes" maxlength="2" min="0" placeholder="00">
+              </div>
+              <div class="input-divider">:</div>
+              <div>
+                <input type="number" id="user-input-seconds" maxlength="2" max="59" min="0" step="0.1" placeholder="00">
+              </div>
+            </div>
+            <button>Calculate</button>
+          </div>
+        </div>
+      </form>
+      <div class="container">
+        <div id="calculated-result"></div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
